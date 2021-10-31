@@ -9,6 +9,16 @@ type Currency string
 // Category представляет собой категорию, в которой был совершен платеж
 type Category string
 
+// Status представляем собой статус платежа.
+type Status string
+
+// Предопределенные статусы платежей.
+const (
+	StatusOk         Status = "OK"
+	StatusFail       Status = "FAIL"
+	StatusInProgress Status = "INPROGRESS"
+)
+
 // Коды валют
 const (
 	TJS Currency = "TJS"
@@ -25,6 +35,7 @@ type Payment struct {
 	ID       int
 	Amount   Money
 	Category Category
+	Status   Status
 }
 
 // Card представляет информацию о платежной карте
